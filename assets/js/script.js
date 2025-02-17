@@ -37,3 +37,5 @@ for (let i = 0; i < team.length; i++) {
     }
   });
 }
+
+/* FONCTION AVEC PARAMETRES*/
