@@ -1,0 +1,152 @@
+/* ##############################################
+                    BASE 
+###############################################*/
+
+/* Import FONT ARVO  */
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+/* Import Bootstrap Icons */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+:root {
+  --black: #212121;
+  --arvo: "Arvo", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ##############################################
+                    TYPOGRAPHY
+###############################################*/
+
+h1,
+col h2,
+h3 {
+  font-family: var(--arvo);
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 4rem !important;
+}
+
+h2,
+h3 {
+  text-transform: uppercase;
+  color: var(--bs-danger);
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+
+  &:after {
+    content: "";
+    width: 10%;
+    height: 1px;
+    background-color: var(--bs-danger);
+    position: absolute;
+    left: 45%;
+    top: 3rem;
+  }
+}
+
+h4 {
+  font-size: 1.2rem;
+  color: var(--bs-danger);
+  font-weight: bold;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: var(--bs-danger);
+}
+
+/* ##############################################
+                    HEADER
+###############################################*/
+header {
+  background: url(../img/hero-image.jpg) no-repeat top;
+  background-size: cover;
+}
+
+header#indexHeader {
+  min-height: 95vh;
+}
+
+header#aboutHeader {
+  min-height: 70vh;
+}
+
+ul li a {
+  color: #9e9e8e !important;
+  font-family: var(--arvo);
+
+  &:hover {
+    color: #fefefe !important;
+  }
+}
+
+#hero {
+  h1,
+  p {
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
+/* ##############################################
+                    MAIN
+###############################################*/
+
+article .icon {
+  background-color: rgb(71, 71, 71);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+article i {
+  font-size: 3rem;
+  color: #fefefe;
+}
+
+.team-item {
+  min-height: 400px;
+  /* border: 1px solid black; */
+  background-color: #fefefe;
+  cursor: pointer;
+}
+
+.team1 {
+  background: url(../img/team1.jpg) no-repeat top center;
+  background-size: cover;
+}
+.team2 {
+  background: url(../img/team2.jpg) no-repeat top center;
+  background-size: cover;
+}
+.team3 {
+  background: url(../img/team3.jpg) no-repeat top center;
+  background-size: cover;
+}
+.team4 {
+  background: url(../img/team4.jpg) no-repeat top center;
+  background-size: cover;
+}
+
+/* FOOTER */
+footer {
+  min-height: 30vh;
+  background-color: var(--bs-danger);
+}
