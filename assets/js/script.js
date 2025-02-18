@@ -1,41 +1,48 @@
-alert("hello world");
+// alert("hello world");
 
 let teamItem = document.querySelectorAll(".team-item");
-let team1 = document.querySelector(".team1");
-let team2 = document.querySelector(".team2");
-let team3 = document.querySelector(".team3");
-let team4 = document.querySelector(".team4");
+let teamContent = document.querySelectorAll(".cardContent");
+let team = ["team1", "team2", "team3", "team4"];
 
-const TEAM = [team1, team2, team3, team4];
+function teamHover(number, team) {
+  teamItem[number].addEventListener("mouseover", () => {
+    if (!teamItem[number].classList.contains(team)) {
+      teamItem[number].classList.add(team);
+      teamContent[number].style.color = "white";
+    } else {
+      teamItem[number].classList.remove(team);
+      teamContent[number].style.color = "";
+    }
+  });
 
-// MouseOver
-for (let i = 0; i < teamItem.length; i++) {
-  console.log(teamItem[i]);
-  if (!teamItem[i].classList.contains('team1'))  {
-  teamItem[i].addEventListener("click", () => {
-    teamItem[i].classList.add("team1");
-  })} 
-  else if (!teamItem[i].classList.contains('team2'))  {
-    teamItem[i].addEventListener("click", () => {
-      teamItem[i].classList.add("team2");
-    })} else if
-  
-
-}
-
-// MouseOut
-for (let i = 0; i < team.length; i++) {
-  teamItem[i].addEventListener("mouseout", () => {
-    if (teamItem[i].classList.contains("team1")) {
-      teamItem[i].classList.remove("team1");
-    } else if (teamItem[i].classList.contains("team2")) {
-      teamItem[i].classList.remove("team2");
-    } else if (teamItem[i].classList.contains("team3")) {
-      teamItem[i].classList.remove("team3");
-    } else if (teamItem[i].classList.contains("team4")) {
-      teamItem[i].classList.remove("team4");
+  teamItem[number].addEventListener("mouseout", () => {
+    if (teamItem[number].classList.contains(team)) {
+      teamItem[number].classList.remove(team);
+    } else {
+      teamItem[number].classList.add(team);
     }
   });
 }
 
-/* FONCTION AVEC PARAMETRES*/
+for (i = 0; i < teamItem.length; i++) {
+  teamHover(i, team[i]);
+}
+
+// if you are not ok, use this, else use the basic forms validation js
+(function () {
+  "use strict";
+  var forms = document.querySelectorAll(".needs-validation");
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
